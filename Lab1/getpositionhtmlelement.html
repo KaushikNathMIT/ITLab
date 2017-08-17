@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Get position </title>
+</head>
+<body>
+	<h1 > HEADER </h1>
+	<h1 id='hx'> </h1>
+
+<script language="javascript">
+	  var ele=document.getElementById('hx');
+	  var rect = ele.getBoundingClientRect();
+	  ele.innerHTML="coord= "+rect.top + ", "+rect.left+", "+rect.bottom+","+ rect.right;
+</script>
+</body>
+</html>

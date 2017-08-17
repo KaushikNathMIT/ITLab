@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Get position </title>
+</head>
+<body onload="startTime()">
+	<h1 id='h1'> HEADER </h1>
+	<h1 id='hx'> </h1>
+
+<script language="javascript">
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    document.getElementById('h1').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+    if(s%15==0){
+    	    document.getElementById('hx').innerHTML = "welcome";
+    }
+    else{
+    	 document.getElementById('hx').innerHTML = "";
+    }
+}
+</script>
+</body>
+</html>
