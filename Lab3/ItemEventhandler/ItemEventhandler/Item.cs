@@ -30,10 +30,9 @@ namespace ItemEventhandler
 
         private void onPriceChanged(int price)
         {
-            CustomEventhandler handler = priceChangedHandler;
-            if(handler!=null)
+            if (priceChangedHandler != null)
             {
-                handler(this, new CustomEventArgs(price));
+                priceChangedHandler(this, new CustomEventArgs(price));
             }
             //Console.WriteLine("The price now is "+price);
         }

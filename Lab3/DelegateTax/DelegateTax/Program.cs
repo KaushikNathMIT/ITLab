@@ -15,10 +15,10 @@ namespace DelegateTax
             TaxCalculator taxCalculator;
             taxCalculator = taxIndia;
             decimal tax = taxCalculator(100);
-            Console.WriteLine("Tax for india is" + tax);
+            Console.WriteLine("Tax for India is" + tax);
             taxCalculator = taxUS;
             tax = taxCalculator(100);
-            Console.WriteLine("Tax for india is" + tax);
+            Console.WriteLine("Tax for US is" + tax);
             Console.ReadLine();
         }
 
