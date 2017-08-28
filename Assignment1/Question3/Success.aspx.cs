@@ -7,6 +7,6 @@ using System.Web.UI.WebControls;
 
 public partial class Success : System.Web.UI.Page {
 	protected void Page_Load(object sender, EventArgs e) {
-		welcome_message.Text = "Welcome " + (string) Session["secured_message"];
+		welcome_message.Text = "Welcome " + (string)Session["secured_message"];
 	}
 }

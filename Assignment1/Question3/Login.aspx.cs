@@ -12,8 +12,8 @@ public partial class _Default : System.Web.UI.Page {
 
 	}
 	public void AttemptLogin(object sender, EventArgs e) {
-		string userName = username.Value;
-		string pass = password.Value;
+		string userName = username.Text;
+		string pass = password.Text;
 		if (userName.Equals("123") && pass.Equals("pwd")) {
 			//message.Text = "Correct credentials";
 			Session["secured_message"] = userName;

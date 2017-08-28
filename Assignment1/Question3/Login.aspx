@@ -10,13 +10,13 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label runat="server">User Name</asp:Label>
-            <input id="username" type="text" runat="server"/>
+            <asp:TextBox ID="username" type="text" runat="server" />
             <asp:Label runat="server">Password</asp:Label>
-            <input id="password" type="password" runat="server"/>
-            <asp:Button id="login_button" type="submit" Text="Login" runat="server" OnClick="AttemptLogin"/>
+            <asp:TextBox ID="password" type="password" runat="server" />
+            <asp:Button ID="login_button" type="submit" Text="Login" runat="server" OnClick="AttemptLogin" />
         </div>
         <div>
-            <asp:Label id="message" runat="server"/>
+            <asp:Label ID="message" runat="server" />
         </div>
     </form>
 </body>
