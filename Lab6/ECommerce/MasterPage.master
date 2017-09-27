@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Company Name</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h1>
+            <asp:Image ID="Image1" runat="server"  Height="32px" Width="50px" />
+            Company Name
+        </h1>
+        <nav>
+            <a href="Electronics.aspx">Electronics</a> |
+            <a href="Baggages.aspx">Baggages</a> |
+            <a href="OffersZone.aspx">Offers Zone</a>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
