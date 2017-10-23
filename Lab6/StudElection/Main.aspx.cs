@@ -28,8 +28,7 @@ public partial class Main : System.Web.UI.Page
 
     protected void cval_ServerValidate(object source, ServerValidateEventArgs args)
     {
-        args.IsValid = false;
-        return;
+        System.Diagnostics.Debug.WriteLine(args.Value);
         if (args.Value.Length != 10)
         {
             args.IsValid = false;
@@ -38,7 +37,7 @@ public partial class Main : System.Web.UI.Page
         {
             try
             {
-                int.Parse(args.Value);
+                long.Parse(args.Value);
                 args.IsValid = true;
             }
             catch (Exception e)
