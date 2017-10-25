@@ -4,14 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+	<title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-			s
-			<asp:Button Text="Fast forward 1/4th day"
-        </div>
-    </form>
+	<form id="form1" runat="server">
+		<div>
+			<asp:SqlDataSource ID="ds1" ConnectionString="<%$ConnectionStrings:db%>" SelectCommand="select * from OrderStatus" runat="server" />
+			<asp:GridView DataSourceID="ds1" runat="server" />
+			<asp:Button ID="btn_ff" Text="Fast forward 1/4th day" runat="server" OnClick="btn_ff_Click"/>
+		</div>
+	</form>
 </body>
 </html>
