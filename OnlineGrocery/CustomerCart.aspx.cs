@@ -25,29 +25,12 @@ public partial class CustomerCart : System.Web.UI.Page
 	}
 	protected void Page_Load(object sender, EventArgs e)
 	{
-		orderID = "Order0";
+		orderID = Request.QueryString["orderid"];
 		orderid.Text = orderID;
 		//this.DataBind();
 	}
 
-	private string GenerateNewOrderID()
-	{
-		SqlConnection connection = new SqlConnection();
-		connection.ConnectionString = WebConfigurationManager.ConnectionStrings["db"].ConnectionString;
-		SqlCommand command = new SqlCommand("select orderid from [Order]", connection);
-		connection.Open();
-		using (connection)
-		{
-			SqlDataReader sqlDataReader = command.ExecuteReader();
-			int count = 0;
-			while (sqlDataReader.Read())
-			{
-				count++;
-			}
-
-			return "Order" + count;
-		}
-	}
+	
 
 	protected void btn_add_Click(object sender, EventArgs e)
 	{
