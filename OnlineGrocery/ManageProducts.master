@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ManageProducts.master.cs" Inherits="ManageProducts" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+		<asp:Button ID="btn_add_pr" Text="Add Product" runat="server" OnClick="btn_add_pr_Click"/>
+		<asp:Button ID="btn_delete_pr" Text="Delete Product" runat="server" OnClick="btn_delete_pr_Click"/>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
