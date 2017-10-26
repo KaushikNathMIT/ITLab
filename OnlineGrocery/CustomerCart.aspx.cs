@@ -25,6 +25,7 @@ public partial class CustomerCart : System.Web.UI.Page
 	}
 	protected void Page_Load(object sender, EventArgs e)
 	{
+		cust_id_label.Text = Session["custid"].ToString();
 		orderID = Request.QueryString["orderid"];
 		orderid.Text = orderID;
 		//this.DataBind();
@@ -48,6 +49,6 @@ public partial class CustomerCart : System.Web.UI.Page
 
 	protected void checkout_button_Click(object sender, EventArgs e)
 	{
-
+		Response.Redirect("CustomerHome.aspx");
 	}
 }

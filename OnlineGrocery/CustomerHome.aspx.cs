@@ -53,6 +53,7 @@ public partial class CustomerHome : System.Web.UI.Page
 
 	protected void place_order_Click(object sender, EventArgs e)
 	{
+		Session["custid"] = tb_cust_id.Text;
 		updateOrderStatusTable();
 		updateCustomerTable();
 		Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
@@ -62,11 +63,18 @@ public partial class CustomerHome : System.Web.UI.Page
 	{
 		SqlConnection connection = new SqlConnection();
 		connection.ConnectionString = WebConfigurationManager.ConnectionStrings["db"].ConnectionString;
-		SqlCommand command = new SqlCommand("insert into Customer values('"+tb_cust_id.Text+"','"+orderID+"')", connection);
-		connection.Open();
-		using (connection)
+		try
 		{
-			command.ExecuteNonQuery();
+			SqlCommand command = new SqlCommand("insert into Customer values('" + tb_cust_id.Text + "','" + orderID + "')", connection);
+			connection.Open();
+			using (connection)
+			{
+				command.ExecuteNonQuery();
+			}
+		}
+		catch(Exception e)
+		{
+
 		}
 	}
 }

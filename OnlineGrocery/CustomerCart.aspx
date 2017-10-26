@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+			Welcome <asp:Label ID="cust_id_label" runat="server" />
+			<br />
+			Your order id is
 			<asp:Label ID="orderid" runat="server" />
 			<br />
 			<asp:SqlDataSource ID="ds2" runat="server" SelectCommand="select ProductName from Product" ConnectionString="<%$ConnectionStrings:db%>" />
