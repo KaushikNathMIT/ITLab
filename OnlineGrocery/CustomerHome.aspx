@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-		<asp:RequiredFieldValidator ControlToValidate="tb_cust_id" runat="server" ErrorMessage="Please fill a customer id"/>
+		<asp:RequiredFieldValidator ControlToValidate="tb_cust_id" runat="server" ErrorMessage="Please fill a customer id" SkinID="validatorSkin"/>
         <div>
 			Please enter your customer id
 			<br />
@@ -21,7 +21,7 @@
 		<br />
 		<div>
 			<asp:SqlDataSource ID="ds1" ConnectionString="<%$ConnectionStrings:db%>" runat="server" SelectCommand="select CustID, Customer.OrderID, [OrderStatus].Status from Customer inner join [OrderStatus] on Customer.OrderID = OrderStatus.OrderID" />
-			<asp:GridView ID="gv_status" DataSourceID="ds1" runat="server" />
+			<asp:GridView ID="gv_status" DataSourceID="ds1" runat="server" SkinID="gridviewSkin"/>
 		</div>
     </form>
 </body>

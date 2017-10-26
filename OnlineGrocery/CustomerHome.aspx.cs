@@ -10,6 +10,10 @@ using System.Web.UI.WebControls;
 public partial class CustomerHome : System.Web.UI.Page
 {
 	private string orderID;
+	protected void Page_PreInit(object sender, EventArgs e)
+	{
+		Page.Theme = "ThemeMain";
+	}
 	protected void Page_Load(object sender, EventArgs e)
 	{
 		orderID = GenerateNewOrderID();
