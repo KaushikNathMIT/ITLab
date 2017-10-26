@@ -24,6 +24,11 @@
 			</asp:SqlDataSource>
             <asp:GridView DataSourceID="ds1" runat="server" ID="gv_cart"/>
         </div>
+		<div>
+			<asp:RadioButtonList ID="rbl_pm" runat="server" />
+			<br />
+			<asp:Button ID="checkout_button" text="Checkout" runat="server" OnClick="checkout_button_Click"/>
+		</div>
     </form>
 </body>
 </html>

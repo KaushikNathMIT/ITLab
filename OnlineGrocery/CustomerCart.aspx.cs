@@ -45,4 +45,9 @@ public partial class CustomerCart : System.Web.UI.Page
 		}
 		this.DataBind();
 	}
+
+	protected void checkout_button_Click(object sender, EventArgs e)
+	{
+
+	}
 }

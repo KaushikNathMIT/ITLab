@@ -13,8 +13,6 @@ public partial class CustomerHome : System.Web.UI.Page
 	protected void Page_Load(object sender, EventArgs e)
 	{
 		orderID = GenerateNewOrderID();
-		updateOrderStatusTable();
-		Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
 	}
 
 	private void updateOrderStatusTable()
@@ -45,6 +43,30 @@ public partial class CustomerHome : System.Web.UI.Page
 			}
 
 			return "Order" + count;
+		}
+	}
+
+	protected void check_status_Click(object sender, EventArgs e)
+	{
+
+	}
+
+	protected void place_order_Click(object sender, EventArgs e)
+	{
+		updateOrderStatusTable();
+		updateCustomerTable();
+		Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
+	}
+
+	private void updateCustomerTable()
+	{
+		SqlConnection connection = new SqlConnection();
+		connection.ConnectionString = WebConfigurationManager.ConnectionStrings["db"].ConnectionString;
+		SqlCommand command = new SqlCommand("insert into Customer values('"+tb_cust_id.Text+"','"+orderID+"')", connection);
+		connection.Open();
+		using (connection)
+		{
+			command.ExecuteNonQuery();
 		}
 	}
 }
