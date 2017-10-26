@@ -53,10 +53,14 @@ public partial class CustomerHome : System.Web.UI.Page
 
 	protected void place_order_Click(object sender, EventArgs e)
 	{
-		Session["custid"] = tb_cust_id.Text;
-		updateOrderStatusTable();
-		updateCustomerTable();
-		Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
+		this.Validate();
+		if (IsValid)
+		{
+			Session["custid"] = tb_cust_id.Text;
+			updateOrderStatusTable();
+			updateCustomerTable();
+			Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
+		}
 	}
 
 	private void updateCustomerTable()
@@ -72,7 +76,7 @@ public partial class CustomerHome : System.Web.UI.Page
 				command.ExecuteNonQuery();
 			}
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 
 		}

@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+		<asp:RequiredFieldValidator ControlToValidate="tb_cust_id" runat="server" ErrorMessage="Please fill a customer id"/>
         <div>
 			Please enter your customer id
 			<br />
