@@ -32,6 +32,9 @@
 			<br />
 			<asp:Button ID="checkout_button" text="Checkout" runat="server" OnClick="checkout_button_Click"/>
 		</div>
+		<div>
+			<asp:Label ID="label_error" Text="" runat="server" />
+		</div>
     </form>
 </body>
 </html>

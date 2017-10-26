@@ -61,8 +61,8 @@ public partial class CustomerHome : System.Web.UI.Page
 		if (IsValid)
 		{
 			Session["custid"] = tb_cust_id.Text;
-			updateOrderStatusTable();
 			updateCustomerTable();
+			updateOrderStatusTable();
 			Response.Redirect("CustomerCart.aspx?orderid=" + orderID);
 		}
 	}

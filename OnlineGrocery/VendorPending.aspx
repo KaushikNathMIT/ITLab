@@ -9,8 +9,10 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
+			<br />
 			<asp:SqlDataSource ID="ds1" ConnectionString="<%$ConnectionStrings:db%>" SelectCommand="select * from OrderStatus" runat="server" />
-			<asp:GridView DataSourceID="ds1" runat="server" />
+			<asp:GridView DataSourceID="ds1" runat="server" SkinID="gridviewSkin"/>
+			<br />
 			<asp:Button ID="btn_ff" Text="Fast forward 1/4th day" runat="server" OnClick="btn_ff_Click"/>
 		</div>
 	</form>
