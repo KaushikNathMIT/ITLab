@@ -11,7 +11,7 @@ using System.Diagnostics;
 public partial class CustomerCart : System.Web.UI.Page
 {
 	private string orderID=null;
-	private int quantity = 0;
+	private int quantity = 0, price=0;
 	private string productid;
 	protected void Page_PreLoad(object sender, EventArgs e)
 	{
@@ -66,12 +66,19 @@ public partial class CustomerCart : System.Web.UI.Page
 			connection.ConnectionString = WebConfigurationManager.ConnectionStrings["db"].ConnectionString;
 			Debug.WriteLine(dpd_list_prod.SelectedValue);
 			SqlCommand command = new SqlCommand("insert into [Order] values ('" + orderID + "','" + dpd_list_prod.SelectedValue + "','" + tb_quantity.Text + "')", connection);
+			SqlCommand command2 = new SqlCommand("select top(1) price from Product where productName='" + dpd_list_prod.SelectedValue + "'",connection);
 			connection.Open();
 			using (connection)
 			{
 				command.ExecuteNonQuery();
+				SqlDataReader sqlDataReader = command2.ExecuteReader();
+				while (sqlDataReader.Read())
+				{
+					price += ((int)sqlDataReader[0])*int.Parse(tb_quantity.Text);
+				}
 			}
 			this.DataBind();
+			label_error.Text = "Total price is "+price;
 		}
 		else
 		{
