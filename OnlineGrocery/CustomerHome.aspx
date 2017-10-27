@@ -17,12 +17,7 @@
 			<asp:Button ID="check_status" Text="Check previous order status" OnClick="check_status_Click" runat="server"/>
         </div>
 		<br />
-		Previous Order status
-		<br />
-		<div>
-			<asp:SqlDataSource ID="ds1" ConnectionString="<%$ConnectionStrings:db%>" runat="server" SelectCommand="select CustID, Customer.OrderID, [OrderStatus].Status from Customer inner join [OrderStatus] on Customer.OrderID = OrderStatus.OrderID" />
-			<asp:GridView ID="gv_status" DataSourceID="ds1" runat="server" SkinID="gridviewSkin"/>
-		</div>
+		
     </form>
 </body>
 </html>

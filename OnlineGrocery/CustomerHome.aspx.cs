@@ -52,7 +52,11 @@ public partial class CustomerHome : System.Web.UI.Page
 
 	protected void check_status_Click(object sender, EventArgs e)
 	{
-
+		this.Validate();
+		if (IsValid)
+		{
+			Response.Redirect("CustomerOrderStatus.aspx?custid=" + tb_cust_id.Text);
+		}
 	}
 
 	protected void place_order_Click(object sender, EventArgs e)

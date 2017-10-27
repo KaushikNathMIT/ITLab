@@ -25,7 +25,7 @@
 					<asp:ControlParameter Name="orderid" ControlID="orderid" Type="String" />
 				</SelectParameters>	
 			</asp:SqlDataSource>
-            <asp:GridView DataSourceID="ds1" runat="server" ID="gv_cart"/>
+            <asp:GridView DataSourceID="ds1" runat="server" ID="gv_cart" SkinID="gridviewSkin"/>
         </div>
 		<div>
 			<asp:RadioButtonList ID="rbl_pm" runat="server" />
