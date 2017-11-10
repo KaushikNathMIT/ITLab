@@ -14,7 +14,7 @@ public partial class _Default : System.Web.UI.Page
     protected void theme_SelectedIndexChanged(object sender, EventArgs e)
     {
         Session["chosenTheme"] = theme.SelectedValue;
-        Response.Redirect(Request.FilePath);
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void Page_PreInit(object sender, EventArgs e)

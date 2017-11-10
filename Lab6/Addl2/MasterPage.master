@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div>
+			<style type="text/css">
+				.floatLeft {
+					float: left;
+				}
+			</style>
+			<asp:Panel ID="left_panel" runat="server" Width="20%" CssClass="floatLeft">
+				<asp:Label ID="label_left" runat="server" />
+			</asp:Panel>
+		</div>
+		<div>
+			<style type="text/css">
+				.floatRight {
+					float: right;
+				}
+			</style>
+			<asp:Panel runat="server" CssClass="floatRight">
+				<asp:ContentPlaceHolder ID="cph1" runat="server" />
+				<asp:ContentPlaceHolder ID="cph2" runat="server" />
+			</asp:Panel>
+		</div>
+		<div>
+		</div>
+	</form>
+</body>
+</html>
